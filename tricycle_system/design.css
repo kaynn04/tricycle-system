@@ -1,0 +1,436 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Fredoka', sans-serif;
+}
+
+/* header styling */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #12372A;
+    border-bottom: 1px solid #ddd;
+}
+
+body {
+    background-color: #436850;
+}
+
+/* title styling */
+
+.title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #FBFADA;
+}
+
+/* dropdown styling */
+
+.dropdown {
+    display: inline-block; /* Ensure inline behavior for proper positioning */
+    position: relative;
+}
+
+.partner {
+    font-size: 1rem;
+    margin-left: 1rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid #ccc;
+    background-color: #FBFADA;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    transition: ease 0.5s;
+}
+
+.partner:hover {
+    background-color: #436850;
+    color: #FBFADA;
+    border:1px solid #436850;
+}
+
+/* Remove the .partner:hover from the .dropdown-arrow selector */
+.dropdown-arrow {
+    margin-left: 5px;
+    transition: transform 0.2s ease-in-out; /* Smooth arrow animation */
+}
+
+/*
+
+Different partner contents
+
+*/
+
+.partner_content {
+    display: none;
+    position: absolute;
+    background-color: #FBFADA;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    top: 100%; /* Position below button */
+    left: 17px; /* Align to button's left edge */
+    margin-top: 5px;
+    border: 2px solid #FBFADA;
+}
+.two {
+    display: none;
+    position: absolute;
+    background-color: #FBFADA;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    top: 100%; /* Position below button */
+    left: 22px; /* Align to button's left edge */
+    margin-top: 5px;
+    border: 2px solid #FBFADA;
+}
+
+.partner_content a {
+    color: black;
+    padding: 12px 16px;
+    display: block;
+}
+.partner_content a:hover {
+    background-color: #436850;
+    color: white;
+}
+.show {display:block;}
+
+.buttons {
+    display: flex;
+    align-items: center;
+}
+
+.login,
+.register {
+    font-size: 1rem;
+    margin-left: 1rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid #ccc;
+    background-color: #FBFADA;
+    border-radius: 4px;
+    cursor: pointer;
+    color: black;
+    font-weight: 500;
+    transition: ease 0.5s;
+}
+
+.login:hover {
+    background-color: #436850;
+    color: #FBFADA;
+    border: 1px solid #436850;
+}
+
+.register {
+    background-color: #436850;
+    border: 3px solid #436850;
+    color: #FBFADA;
+}
+
+.register:hover {
+    border: 3px solid #FBFADA;
+    background-color: #FBFADA;
+    color: black;
+}
+
+/* register overlay */
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #12372a; /* Semi-transparent white overlay */
+    z-index: 2; /* Ensure it appears above other content */
+}
+
+/* register content */
+
+.loginregister-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #FBFADA;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    width: 70%; /* Adjust the width as needed */
+    max-width: 500px; /* Set a maximum width if desired */
+}
+.close_button {
+    max-width: 300px;
+    padding: 10px;
+    margin: 10px auto; /* Set top and bottom margin to 10px and auto for left and right margins to center the button */
+    cursor: pointer;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    font-size: 20px;
+}
+.close_button:hover {
+    background-color: #436850
+}
+.loginregister-option {
+    width: 100%;
+    cursor: pointer;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    font-size: 20px;
+}
+.loginregister-option:hover {
+    background-color: #436850;
+}
+
+/* 
+
+CUSTOMER DASHBOARD
+
+*/
+
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 300px;
+    color: white;
+}
+.dashboard h1,
+.dashboard p {
+    margin: 10px;
+}
+.dashboard .button-container {
+    display: flex;
+    gap: 10px;
+}
+
+/* customer welcome */
+
+.modal_button {
+    background-color: white;
+    color: #FBFADA;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.modal_button:hover {
+    background-color: #ffffff;
+}
+.btn-warning {
+    background-color: #ffc107;
+    color: #212529;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+}
+.btn-warning:hover {
+    background-color: #ffca2c;
+    color: #212529;
+}
+#infoModal {
+    display: none;
+}
+.modal-content form {
+    display: grid;
+    gap: 20px;
+    max-width: 300px;
+    margin: 0 auto;
+    color: #FBFADA;
+}
+.modal-content h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+    font-size: 30px;
+    color: #FBFADA;
+}
+label {
+    font-weight: bold;
+}
+input, select {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+}
+.modal_button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+}
+.modal_button:hover {
+    background-color: #0056b3;
+}
+.form1 {
+    display: flex;
+    flex-direction: row;
+    margin-left: 20px;
+}
+.close {
+    font-size: 50px;
+    padding: 10px;
+    cursor: pointer;
+    color: #FBFADA;
+}
+
+/* Form Spacing */
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.form1,
+.form2,
+.form3 {
+    display: flex;
+    flex-direction: column; /* Change to column for forms */
+    margin-left: 20px;
+}
+
+.form-container label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-container input,
+.form-container select {
+    width: calc(100% - 20px); /* Adjust the width as needed */
+    padding: 10px; /* Increase padding for better visibility and touch-friendly */
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+.form-container button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+}
+
+.form-container button:hover {
+    background-color: #0056b3;
+}
+
+/* Fare Calculator Styles */
+
+.fare-calculator {
+    background-color: #FBFADA;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(8, 56, 11, 0.9);
+    text-align: center;
+    margin-top: 150px;
+    max-width: 600px; /* Set a maximum width as per your preference */
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+.fare-calculator h2 {
+    margin-bottom: 20px;
+}
+.fare-calculator form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.fare-calculator label {
+    margin: 10px 0;
+}
+.fare-calculator input {
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Buttons */
+.viewDetailsBtn,
+.placeOrder {
+    background-color: white;
+    color: #12372A;
+    padding: 10px 20px;
+    border: 2px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    font-weight: 500;
+}
+.viewDetailsBtn:hover,
+.placeOrder:hover{
+    background-color: #436850;
+    color: white;
+}
+.fare-result {
+    margin-top: 20px;
+    text-align: center;
+}
+form[action='place_order.php'] {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+form[action=''] {
+    max-width: 400px; /* Adjust the maximum width as needed */
+    margin: 0 auto;
+}
+form[action=''] label {
+    display: block;
+    margin-bottom: 8px;
+}
+form[action=''] input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc; /* Add border style here */
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+form[action=''] button {
+    background-color: white;
+    color: black;
+    padding: 10px 20px;
+    border: 2px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+.clearButton {
+    color: #12372A; /* White text color */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px; /* Adjust the top margin as needed */
+    font-weight: 500;
+}
+.clearButton:hover {
+    background-color: #bd2130; /* Darker red color on hover */
+    color: white;
+    
+}
